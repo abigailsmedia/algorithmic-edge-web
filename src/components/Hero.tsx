@@ -10,6 +10,7 @@ const Hero = () => {
           muted
           loop
           playsInline
+          controls
           className="h-full w-full object-cover opacity-50"
           // This tells the browser to load the video immediately
           fetchpriority="high"
