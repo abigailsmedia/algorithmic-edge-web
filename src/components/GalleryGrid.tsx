@@ -32,7 +32,7 @@ const specialties = [
     id: 4,
     title: "Social Discovery Reels",
     category: "Social",
-    image: "/social-reels.jpg",
+    image: "/social-discovery-reels.webp",
     prompt: "Vertical-first content engineered to trigger the algorithm and stop the scroll.",
     span: "md:col-span-1 md:row-span-2"
   },
@@ -64,7 +64,7 @@ const specialties = [
     id: 8,
     title: "AI-Powered Ad Creative",
     category: "Advertising",
-    image: "/ad-creative.jpg",
+    image: "/ai-powered-ad-creative.webp",
     prompt: "Data-informed visuals optimized for high click-through rates and brand resonance.",
     span: "md:col-span-2 md:row-span-1"
   },
