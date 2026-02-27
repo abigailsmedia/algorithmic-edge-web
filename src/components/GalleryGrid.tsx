@@ -7,7 +7,8 @@ const specialties = [
     id: 1,
     title: "Brand Identity Design",
     category: "Branding",
-    image: "https://picsum.photos/seed/identity/600/800",
+    // Update these paths to match your uploaded filenames
+    image: "/brand-identity-design-resized.webp", 
     prompt: "Beyond logos. We build entire visual universes that define your brand’s DNA.",
     span: "md:col-span-1 md:row-span-2"
   },
@@ -15,7 +16,7 @@ const specialties = [
     id: 2,
     title: "Surreal Storytelling",
     category: "Editorial",
-    image: "https://picsum.photos/seed/surreal2/800/600",
+    image: "/surreal-brand-storytelling-resized.webp",
     prompt: "Dreamlike visuals for high-concept campaigns. If you can think it, we can manifest it.",
     span: "md:col-span-2 md:row-span-1"
   },
@@ -23,7 +24,7 @@ const specialties = [
     id: 3,
     title: "Collaborative Workflow",
     category: "Process",
-    image: "https://picsum.photos/seed/collab/600/600",
+    image: "/collaborative-workflow-specialist-resized.webp",
     prompt: "Human-led, machine-powered. Our proprietary process ensures your vision stays in the driver's seat.",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -31,7 +32,7 @@ const specialties = [
     id: 4,
     title: "Social Discovery Reels",
     category: "Social",
-    image: "https://picsum.photos/seed/social/600/800",
+    image: "/social-reels.jpg",
     prompt: "Vertical-first content engineered to trigger the algorithm and stop the scroll.",
     span: "md:col-span-1 md:row-span-2"
   },
@@ -39,7 +40,7 @@ const specialties = [
     id: 5,
     title: "High-Fidelity Concept Art",
     category: "Concept",
-    image: "https://picsum.photos/seed/concept/800/800",
+    image: "/high-fidelity-concept-art-resized.webp",
     prompt: "From rough idea to cinematic blueprint. Visualize your project with movie-quality detail instantly.",
     span: "md:col-span-2 md:row-span-2"
   },
@@ -47,7 +48,7 @@ const specialties = [
     id: 6,
     title: "Authentic Portraiture",
     category: "Portrait",
-    image: "https://picsum.photos/seed/portrait/600/600",
+    image: "/authentic-portraiture-resized.webp",
     prompt: "AI-generated humans that actually look... human. Natural lighting, genuine emotion, zero uncanny valley.",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -55,7 +56,7 @@ const specialties = [
     id: 7,
     title: "Interactive 3D Illustrations",
     category: "3D Design",
-    image: "https://picsum.photos/seed/3d/600/600",
+    image: "/interactive-3d-illustrations-resized.webp",
     prompt: "Add depth to your digital presence with complex, high-res 3D assets designed for modern web layouts.",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -63,7 +64,7 @@ const specialties = [
     id: 8,
     title: "AI-Powered Ad Creative",
     category: "Advertising",
-    image: "https://picsum.photos/seed/ad/800/600",
+    image: "/ad-creative.jpg",
     prompt: "Data-informed visuals optimized for high click-through rates and brand resonance.",
     span: "md:col-span-2 md:row-span-1"
   },
@@ -71,7 +72,7 @@ const specialties = [
     id: 9,
     title: "Cinematic Landscapes",
     category: "Environment",
-    image: "https://picsum.photos/seed/landscape2/600/600",
+    image: "/cineematic-landscapes-resized.webp",
     prompt: "Expansive, hero-level environments that provide a breathtaking backdrop for your brand's message.",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -79,7 +80,7 @@ const specialties = [
     id: 10,
     title: "Commercial-Safe Generation",
     category: "Enterprise",
-    image: "https://picsum.photos/seed/commercial/600/600",
+    image: "/commercial-safe-generation.webp",
     prompt: "Copyright-cleared assets generated on licensed models. Safe for global campaigns and broadcast use.",
     span: "md:col-span-1 md:row-span-1"
   }
@@ -97,8 +98,8 @@ export default function GalleryGrid() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4">
-            Curated <span className="text-gradient-teal">Specialties</span>
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-4 text-white">
+            Curated <span className="text-neon-teal">Specialties</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl">
             Explore our diverse range of AI-generated visual assets, tailored for every industry.
@@ -130,23 +131,16 @@ export default function GalleryGrid() {
               className={`group relative rounded-2xl overflow-hidden cursor-pointer ${item.span}`}
             >
               <picture className="block w-full h-full">
-                <source srcSet={`${item.image}.webp`} type="image/webp" />
+                {/* Reference images directly from public folder */}
                 <motion.img 
                   layoutId={`gallery-image-${item.id}`}
                   src={item.image} 
                   alt={item.title} 
-                  variants={{
-                    hover: { 
-                      scale: 1.05, 
-                      y: 4, // Slight parallax shift
-                      transition: { duration: 0.4, ease: "easeOut" }
-                    }
-                  }}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </picture>
               
-              {/* Overlay */}
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6"
                 variants={{
@@ -154,54 +148,21 @@ export default function GalleryGrid() {
                   hover: { opacity: 1, transition: { duration: 0.3 } }
                 }}
               >
-                <motion.span 
-                  className="text-neon-teal font-mono text-xs mb-2 uppercase tracking-widest"
-                  variants={{
-                    initial: { y: 20, opacity: 0 },
-                    hover: { y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.05 } }
-                  }}
-                >
-                  {item.category}
-                </motion.span>
-                <motion.h3 
-                  className="font-display text-2xl font-bold mb-3"
-                  variants={{
-                    initial: { y: 20, opacity: 0 },
-                    hover: { y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }
-                  }}
-                >
-                  {item.title}
-                </motion.h3>
+                <span className="text-neon-teal font-mono text-xs mb-2 uppercase tracking-widest">{item.category}</span>
+                <h3 className="font-display text-2xl font-bold mb-3 text-white">{item.title}</h3>
                 
-                <motion.div 
-                  className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/10"
-                  variants={{
-                    initial: { y: 20, opacity: 0 },
-                    hover: { y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.15 } }
-                  }}
-                >
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/10">
                   <p className="font-mono text-xs text-gray-300 line-clamp-2">
-                    <span className="text-neon-gold mr-2">$</span>
+                    <span className="text-yellow-400 mr-2">$</span>
                     {item.prompt}
                   </p>
-                </motion.div>
+                </div>
               </motion.div>
             </motion.div>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-white/5 border border-neon-teal/30 rounded-full text-neon-teal font-mono text-sm tracking-wider hover:bg-neon-teal/10 hover:border-neon-teal transition-all"
-          >
-            See the Future
-          </motion.button>
-        </div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selectedItem && (
           <motion.div
@@ -216,42 +177,26 @@ export default function GalleryGrid() {
               className="relative max-w-6xl w-full max-h-[90vh] rounded-xl overflow-hidden bg-black border border-white/10 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* High Res Image (Lazy Loaded on Click) */}
-              <picture className="block w-full h-full">
-                <source srcSet={`${selectedItem.image.replace(/\/\d+\/\d+$/, '/1920/1080')}.webp`} type="image/webp" />
-                <motion.img
-                  layoutId={`gallery-image-${selectedItem.id}`}
-                  src={selectedItem.image.replace(/\/\d+\/\d+$/, '/1920/1080')} 
-                  alt={selectedItem.title}
-                  className="w-full h-full object-contain max-h-[85vh]"
-                />
-              </picture>
+              <motion.img
+                layoutId={`gallery-image-${selectedItem.id}`}
+                src={selectedItem.image} 
+                alt={selectedItem.title}
+                className="w-full h-full object-contain max-h-[85vh]"
+              />
               
-              {/* Watermark */}
-              <div className="absolute bottom-8 right-8 text-white/10 font-display font-bold text-8xl pointer-events-none select-none z-20">
-                AE
-              </div>
-
-              {/* Close Button */}
               <button 
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-white/20 rounded-full text-white transition-colors z-30"
+                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-white/20 rounded-full text-white z-30"
               >
                 <X size={24} />
               </button>
               
-              {/* Info Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent z-20">
-                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                      <span className="text-neon-teal font-mono text-xs uppercase tracking-widest mb-2 block">{selectedItem.category}</span>
-                      <h3 className="text-3xl font-display font-bold text-white mb-2">{selectedItem.title}</h3>
-                      <p className="font-mono text-gray-400 text-sm max-w-2xl border-l-2 border-neon-gold pl-4">
-                        <span className="text-neon-gold mr-2">$</span>
-                        {selectedItem.prompt}
-                      </p>
-                    </div>
-                  </div>
+                <span className="text-neon-teal font-mono text-xs uppercase tracking-widest mb-2 block">{selectedItem.category}</span>
+                <h3 className="text-3xl font-display font-bold text-white mb-2">{selectedItem.title}</h3>
+                <p className="font-mono text-gray-400 text-sm max-w-2xl border-l-2 border-yellow-400 pl-4">
+                  {selectedItem.prompt}
+                </p>
               </div>
             </motion.div>
           </motion.div>
