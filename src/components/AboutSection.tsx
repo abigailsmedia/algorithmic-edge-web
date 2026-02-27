@@ -17,7 +17,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-transparent to-transparent z-10" />
               {/* Placeholder for African American woman in teal v-neck and jeans */}
               <img 
-                src="https://picsum.photos/seed/founder/800/1000" 
+                src="/kims-office.webp" 
                 alt="Founder of The Algorithmic Edge" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
@@ -53,7 +53,7 @@ export default function AboutSection() {
             </div>
 
             <div className="mt-8 pt-8 border-t border-white/10">
-              <p className="font-display text-xl font-bold">Alex Johnson</p>
+              <p className="font-display text-xl font-bold">Kimberly Johnson</p>
               <p className="text-neon-gold font-mono text-sm">Founder & Lead Creative Technologist</p>
             </div>
           </motion.div>
