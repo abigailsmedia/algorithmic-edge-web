@@ -67,11 +67,11 @@ export default function EdgeSlider() {
           {/* After Image (Right Side - AI Masterpiece) */}
           <div className="absolute inset-0 w-full h-full">
             <img 
-              src="https://picsum.photos/seed/masterpiece/1920/1080" 
-              alt="AI Masterpiece" 
-              className="w-full h-full object-cover"
-              draggable={false}
-            />
+  src="/after.webp" // <--- Updated
+  alt="AI Masterpiece" 
+  className="w-full h-full object-cover"
+  draggable={false}
+/>
             <div className="absolute top-6 right-6 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-neon-magenta/30">
               <span className="text-neon-magenta font-mono text-sm font-bold tracking-wider">AI MASTERPIECE</span>
             </div>
@@ -82,13 +82,14 @@ export default function EdgeSlider() {
             className="absolute inset-0 h-full overflow-hidden"
             style={{ width: `${sliderPosition}%` }}
           >
-            <img 
-              src="https://picsum.photos/seed/sketch/1920/1080?grayscale" 
-              alt="Rough Concept" 
-              className="absolute inset-0 w-full h-full object-cover max-w-none"
-              style={{ width: containerRef.current?.offsetWidth || '100%' }}
-              draggable={false}
-            />
+           <img 
+  src="/before.webp" // <--- Updated
+  alt="Rough Concept" 
+  className="absolute inset-0 w-full h-full object-cover max-w-none"
+  // Keep the width styling as is
+  style={{ width: containerRef.current?.offsetWidth || '100%' }}
+  draggable={false}
+/>
             <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
               <span className="text-white font-mono text-sm font-bold tracking-wider">ROUGH PROMPT</span>
             </div>
