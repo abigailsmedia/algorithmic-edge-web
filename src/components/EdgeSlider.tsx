@@ -67,7 +67,7 @@ export default function EdgeSlider() {
           {/* After Image (Right Side - AI Masterpiece) */}
           <div className="absolute inset-0 w-full h-full">
             <img 
-  src="/after.webp" // <--- Updated
+  src="/after-resized.webp" // <--- Updated
   alt="AI Masterpiece" 
   className="w-full h-full object-cover"
   draggable={false}
@@ -83,7 +83,7 @@ export default function EdgeSlider() {
             style={{ width: `${sliderPosition}%` }}
           >
            <img 
-  src="/before.webp" // <--- Updated
+  src="/before-resized.webp" // <--- Updated
   alt="Rough Concept" 
   className="absolute inset-0 w-full h-full object-cover max-w-none"
   // Keep the width styling as is
