@@ -199,7 +199,7 @@ export default function Footer() {
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-mono">
           <p>&copy; 2026 The Algorithmic Edge. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-neon-teal transition-colors">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61586408150930" className="hover:text-neon-teal transition-colors">Instagram</a>
             <a href="#" className="hover:text-neon-teal transition-colors">Facebook</a>
             <a href="#" className="hover:text-neon-teal transition-colors">LinkedIn</a>
           </div>
