@@ -39,9 +39,12 @@ const Hero = () => {
           <button className="bg-neon-teal px-8 py-4 text-black font-bold hover:bg-white transition-all">
             Explore Services
           </button>
-          <button className="border border-white px-8 py-4 text-white font-medium hover:bg-white/10 transition-all">
-            Contact Us
-          </button>
+          <button 
+  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+  className="border border-white px-8 py-4 text-white font-medium hover:bg-white/10 transition-all"
+>
+  Contact Us
+</button>
         </div>
       </div>
     </section>
