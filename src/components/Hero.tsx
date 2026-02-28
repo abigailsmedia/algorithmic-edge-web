@@ -16,7 +16,7 @@ const Hero = () => {
           fetchpriority="high"
         >
           {/* Ensure the name below matches your file in the public folder exactly */}
-          <source src="/hero-reel-2.mp4" type="video/mp4" />
+          <source src="/hero-video-loop-low.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         
