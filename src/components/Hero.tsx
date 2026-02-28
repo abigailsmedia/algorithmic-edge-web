@@ -36,9 +36,12 @@ const Hero = () => {
         </p>
 
         <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <button className="bg-neon-teal px-8 py-4 text-black font-bold hover:bg-white transition-all">
-            Explore Services
-          </button>
+          <button 
+  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+  className="bg-neon-teal px-8 py-4 text-black font-bold hover:bg-white transition-all"
+>
+  Explore Services
+</button>
           <button 
   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
   className="border border-white px-8 py-4 text-white font-medium hover:bg-white/10 transition-all"
