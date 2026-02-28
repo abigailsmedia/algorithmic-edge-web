@@ -37,7 +37,7 @@ const Hero = () => {
 
         <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <button 
-  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
   className="bg-neon-teal px-8 py-4 text-black font-bold hover:bg-white transition-all"
 >
   Explore Services
